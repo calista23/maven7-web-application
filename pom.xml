@@ -95,19 +95,19 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.84.49.142:8081/repository/paypal-releases/</url>
+	      <url>http://44.208.28.223:8081/repository/paypal7-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.84.49.142:8081/repository/paypal-snapshots/</url>
+	      <url>http://44.208.28.223:8081/repository/paypal7-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>paypal</finalName>
+		<finalName>paypal7</finalName>
 		
 		<plugins>
 			<plugin>
