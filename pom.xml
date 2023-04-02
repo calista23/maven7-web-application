@@ -95,19 +95,19 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.93.6.184:8081/repository/paypal7-release/</url>
+	      <url>hhttp://44.204.53.143:8081/repository/tesla-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.93.6.184:8081/repository/paypal7-snapshot/</url>
+	      <url>http://44.204.53.143:8081/repository/tesla-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>paypal7</finalName>
+		<finalName>tesla</finalName>
 		
 		<plugins>
 			<plugin>
