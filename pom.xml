@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla-dev</finalName>
+		<finalName>tesla3</finalName>
 		
 		<plugins>
 			<plugin>
