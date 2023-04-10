@@ -29,4 +29,5 @@ stage('8emailNotify'){
     Build is done.
 
 Calista23''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build status', to: 'calistaebunohac.prodacct@gmail.com'
+    }
 }
