@@ -1,15 +1,15 @@
 node{
     def mavenHome = tool name: 'maven3.9.1'
- stage('1.CodeClone'){
+  stage('1.CodeClone'){
    git credentialsId: 'gitHubCredencials', url: 'https://github.com/calista23/maven2-private'
   }
-stage('2MavenBuild'){
+ stage('2MavenBuild'){
   sh "${mavenHome}/bin/mvn package"
  }
  stage('3codeQuality'){
    sh "${mavenHome}/bin/mvn sonar:sonar"
  } 
-stage('4UploadArtifacts'){                   
+ stage('4UploadArtifacts'){                   
    sh "${mavenHome}/bin/mvn deploy"
  }
  stage('5deploy2UAT'){
@@ -20,10 +20,10 @@ stage('4UploadArtifacts'){
     timeout(time:5, unit:'HOURS') {
     input message: 'Application ready for deployment, Please review and approve'
       }
-  stage('7deploy2Prod'){
+ stage('7deploy2Prod'){
     deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.224.25.34:8177/')], contextPath: null, war: 'target/*.war'
    }
-stage('8emailNotify'){
+    stage('8emailNotify'){
     emailext body: '''Hello Team,
 
     Build is done.
