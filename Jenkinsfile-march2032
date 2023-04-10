@@ -1,7 +1,7 @@
 node{
     def mavenHome = tool name: 'maven3.9.1'
   stage('1.CodeClone'){
-   git credentialsId: 'gitHubCredencials', url: 'https://github.com/calista23/maven2-private'
+   git credentialsId: 'gitHubCredencials', url: 'https://github.com/calista23/maven7-web-application'
   }
  stage('2MavenBuild'){
   sh "${mavenHome}/bin/mvn package"
@@ -28,6 +28,6 @@ node{
 
     Build is done.
 
-Calista23''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build status', to: 'calistaebunohac.prodacct@gmail.com'
+    Calista23''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build status', to: 'calistaebunohac.prodacct@gmail.com'
     }
 }
