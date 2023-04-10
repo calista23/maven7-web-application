@@ -1,5 +1,6 @@
-stage('1.CodeClone'){
-     def mavenHome = tool name: 'maven3.9.1'
+node{
+    def mavenHome = tool name: 'maven3.9.1'
+ stage('1.CodeClone'){
    git credentialsId: 'gitHubCredencials', url: 'https://github.com/calista23/maven2-private'
   }
 stage('2MavenBuild'){
