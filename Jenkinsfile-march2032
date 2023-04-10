@@ -23,12 +23,10 @@ stage('4UploadArtifacts'){
   stage('7deploy2Prod'){
     deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.224.25.34:8177/')], contextPath: null, war: 'target/*.war'
    }
-}
 stage('8emailNotify'){
     emailext body: '''Hello Team,
 
-Build is done.
+    Build is done.
 
 Calista23''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build status', to: 'calistaebunohac.prodacct@gmail.com'
-
 }
