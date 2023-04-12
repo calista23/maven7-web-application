@@ -13,7 +13,7 @@ node{
    sh "${mavenHome}/bin/mvn deploy"
  }
  stage('5deploy2UAT'){
-   deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.224.25.34:8177/')], contextPath: null, war: 'target/*.war'
+   deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.82.176.145:8177/')], contextPath: null, war: 'target/*.war'
   }
   stage('6Manualapproval'){
     sh "echo 'ready for review' "
@@ -21,7 +21,7 @@ node{
     input message: 'Application ready for deployment, Please review and approve'
       }
  stage('7deploy2Prod'){
-    deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.224.25.34:8177/')], contextPath: null, war: 'target/*.war'
+    deploy adapters: [tomcat9(credentialsId: 'camadi-TomcatCredenctials', path: '', url: 'http://54.82.176.145:8177/')], contextPath: null, war: 'target/*.war'
    }
     stage('8emailNotify'){
     emailext body: '''Hello Team,
